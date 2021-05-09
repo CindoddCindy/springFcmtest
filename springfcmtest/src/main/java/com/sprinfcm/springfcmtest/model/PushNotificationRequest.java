@@ -7,7 +7,7 @@ public class PushNotificationRequest {
     private String topic;
     private String token;
 
-    public PushNotificationRequest() {
+    public PushNotificationRequest(String title, String message, String topic) {
     }
 
     public PushNotificationRequest(String title, String message, String topic, String token) {

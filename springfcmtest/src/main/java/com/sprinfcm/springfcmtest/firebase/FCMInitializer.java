@@ -33,4 +33,5 @@ public class FCMInitializer {
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
+    }
 }
