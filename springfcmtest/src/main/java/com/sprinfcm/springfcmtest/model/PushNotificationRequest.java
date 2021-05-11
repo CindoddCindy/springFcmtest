@@ -1,16 +1,37 @@
 package com.sprinfcm.springfcmtest.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "pnr")
 public class PushNotificationRequest {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
+    @Size(max = 250)
     private String title;
+
+    @NotNull
+    @Size(max = 250)
     private String message;
+
+    @NotNull
+    @Size(max = 250)
     private String topic;
+
+
     private String token;
 
     public PushNotificationRequest(String title, String message, String topic) {
     }
 
-    public PushNotificationRequest(String title, String message, String topic, String token) {
+    public PushNotificationRequest(Long id,String title, String message, String topic, String token) {
+        this.id=id;
         this.title = title;
         this.message = message;
         this.topic = topic;
@@ -47,5 +68,13 @@ public class PushNotificationRequest {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
